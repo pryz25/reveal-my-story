@@ -6,17 +6,18 @@ import CustomStory from './components/CustomStory.jsx';
 class App extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { 
-      items: []
+    this.state = {
+      genStory: 'temp', 
+      userStory: '',
     }
   }
 
   componentDidMount() {
     $.ajax({
-      url: '/items', 
+      url: '/generator', 
       success: (data) => {
         this.setState({
-          items: data
+          genStory: data
         })
       },
       error: (err) => {
@@ -25,13 +26,41 @@ class App extends React.Component {
     });
   }
 
+  handleChange(e) {
+    this.setState({
+      userStory: e.target.value,
+    });
+  }
+
+  storyButton() {
+    $.ajax({
+      url: '/generator', 
+      success: (data) => {
+        this.setState({
+          genStory: data
+        })
+      },
+      error: (err) => {
+        console.log('err', err);
+      }
+    });
+  }
+
+  saveButton() {
+    $.ajax({
+      url: '/generator',
+      type: 'POST',
+    })
+  }
+
   render () {
     return (
       <div>
         <h1>You are a...</h1>
-        <Display />
-        <CustomStory />
-        <button>I Need a New Story!</button>
+        <Display genStory={this.state.genStory} />
+        <CustomStory userStory={this.state.userStory} handleChange={this.handleChange.bind(this)} />
+        <button onClick={this.storyButton.bind(this)}>I Need a New Story!</button>
+        <button onClick={this.saveButton.bind(this)}>Save Story</button>
       </div>
     )}
 }
