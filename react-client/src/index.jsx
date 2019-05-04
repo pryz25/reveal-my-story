@@ -1,5 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import Display from './components/Display.jsx';
+import CustomStory from './components/CustomStory.jsx';
 
 class App extends React.Component {
   constructor(props) {
@@ -26,7 +28,10 @@ class App extends React.Component {
   render () {
     return (
       <div>
-        <h1>Reveal Your Story!</h1>
+        <h1>You are a...</h1>
+        <Display />
+        <CustomStory />
+        <button>I Need a New Story!</button>
       </div>
     )}
 }
