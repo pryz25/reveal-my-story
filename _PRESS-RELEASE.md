@@ -1,4 +1,4 @@
-# Project Name #
+# Reveal My Story #
 
 <!-- 
 > This material was originally posted [here](http://www.quora.com/What-is-Amazons-approach-to-product-development-and-product-management). It is reproduced here for posterities sake.
@@ -16,29 +16,27 @@ Oh, and I also like to write press-releases in what I call "Oprah-speak" for mai
 Once the project moves into development, the press release can be used as a touchstone; a guiding light. The product team can ask themselves, "Are we building what is in the press release?" If they find they're spending time building things that aren't in the press release (overbuilding), they need to ask themselves why. This keeps product development focused on achieving the customer benefits and not building extraneous stuff that takes longer to build, takes resources to maintain, and doesn't provide real customer benefit (at least not enough to warrant inclusion in the press release).
  -->
  
-## Heading ##
-  > Name the product in a way the reader (i.e. your target customers) will understand.
+## Reveal My Story ##
 
-## Sub-Heading ##
-  > Describe who the market for the product is and what benefit they get. One sentence only underneath the title.
+### A character generator for tabletop RPG's ###
 
 ## Summary ##
-  > Give a summary of the product and the benefit. Assume the reader will not read anything else so make this paragraph good.
+  > This character generator will provide you with a randomized gender, race, class, and basic background to get you started on your adventure!
 
 ## Problem ##
-  > Describe the problem your product solves.
+  > The end user has a creative block when thinking of a new charactor to roll in a tabletop RPG.
 
 ## Solution ##
-  > Describe how your product elegantly solves the problem.
+  > By providing character stories the end user can choose to pick a provided one or be inspired to create their own!
 
-## Quote from You ##
-  > A quote from a spokesperson in your company.
+## Quote from the creator ##
+  > This app is super easy to use.
 
 ## How to Get Started ##
-  > Describe how easy it is to get started.
+  > Click the randomize button and get a random story!
 
 ## Customer Quote ##
-  > Provide a quote from a hypothetical customer that describes how they experienced the benefit.
+  > This app was great! I was stuck on my next character idea and the provided examples allowed me to think of my next character!
 
 ## Closing and Call to Action ##
   > Wrap it up and give pointers where the reader should go next.
