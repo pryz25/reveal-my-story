@@ -11,15 +11,16 @@ db.once('open', function() {
   console.log('mongoose connected successfully');
 });
 
-var itemSchema = mongoose.Schema({
-  quantity: Number,
-  description: String
+var characterSchema = mongoose.Schema({
+  user: Number,
+  genStory: String,
+  userStory: String,
 });
 
-var Item = mongoose.model('Item', itemSchema);
+var Character = mongoose.model('Item', characterSchema);
 
-var selectAll = function(callback) {
-  Item.find({}, function(err, items) {
+var select = function(callback) {
+  Character.find({user}, function(err, items) {
     if(err) {
       callback(err, null);
     } else {
@@ -28,4 +29,4 @@ var selectAll = function(callback) {
   });
 };
 
-module.exports.selectAll = selectAll;
+module.exports.select = select;

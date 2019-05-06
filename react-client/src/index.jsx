@@ -13,17 +13,7 @@ class App extends React.Component {
   }
 
   componentDidMount() {
-    $.ajax({
-      url: '/generator', 
-      success: (data) => {
-        this.setState({
-          genStory: data
-        })
-      },
-      error: (err) => {
-        console.log('err', err);
-      }
-    });
+    this.storyButton()
   }
 
   handleChange(e) {
@@ -33,17 +23,8 @@ class App extends React.Component {
   }
 
   storyButton() {
-    $.ajax({
-      url: '/generator', 
-      success: (data) => {
-        this.setState({
-          genStory: data
-        })
-      },
-      error: (err) => {
-        console.log('err', err);
-      }
-    });
+    let story = '';
+    
   }
 
   saveButton() {
