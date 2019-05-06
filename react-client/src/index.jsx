@@ -29,6 +29,12 @@ class App extends React.Component {
 
   storyButton() {
     let story = '';
+    let adj = adjective[Math.floor(Math.random() * adjective.length)];
+    let back = backstory[Math.floor(Math.random() * backstory.length)];
+    let role = classes[Math.floor(Math.random() * classes.length)];
+    let locale = locations[Math.floor(Math.random() * locations.length)];
+    let race = races[Math.floor(Math.random() * races.length)];
+    
 
   }
 
