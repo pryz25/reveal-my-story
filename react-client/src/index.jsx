@@ -2,6 +2,11 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import Display from './components/Display.jsx';
 import CustomStory from './components/CustomStory.jsx';
+import adjective from './possibilities/adjective.jsx';
+import backstory from './possibilities/backstory.jsx';
+import classes from './possibilities/classes.jsx';
+import locations from './possibilities/locations.jsx';
+import races from './possibilities/races.jsx';
 
 class App extends React.Component {
   constructor(props) {
@@ -24,7 +29,7 @@ class App extends React.Component {
 
   storyButton() {
     let story = '';
-    
+
   }
 
   saveButton() {

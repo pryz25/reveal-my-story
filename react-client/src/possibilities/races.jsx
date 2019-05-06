@@ -1,0 +1,25 @@
+const races = [
+  'human',
+  'half-elf',
+  'dwarf',
+  'elf',
+  'gnome',
+  'half-orc',
+  'halfling',
+  'tiefling',
+  'aasimar',
+  'lizardfolk',
+  'goliath',
+  'goblin',
+  'aaracokra',
+  'firbolg',
+  'genasi',
+  'tabaxi',
+  'triton',
+  'tortle',
+  'dragonborn',
+  'kenku',
+  'warforged',
+]
+
+export default races;
