@@ -17,10 +17,10 @@ let characterSchema = mongoose.Schema({
   userStory: String,
 });
 
-let Character = mongoose.model('Character', characterSchema);
+let Character = mongoose.model('characters', characterSchema);
 
-let select = (callback) => {
-  Character.find({user}, (err, items) => {
+let select = (id, callback) => {
+  Character.find({ user: id }, (err, items) => {
     if(err) {
       callback(err, null);
     } else {
@@ -30,7 +30,7 @@ let select = (callback) => {
 };
 
 let add = (data, callback) => {
-  Character.create({data}, (err, success) => {
+  Character.create(data, (err, success) => {
     if (err) {
       callback(err, null);
     } else {

@@ -16,6 +16,8 @@ class App extends React.Component {
     this.state = {
       genStory: 'temp', 
       userStory: '',
+      justSaved: false,
+      user: '',
     }
   }
 
@@ -42,22 +44,33 @@ class App extends React.Component {
   }
 
   saveButton() {
-    let user = faker.random.alphaNumeric(10)
+    let charUser = faker.random.alphaNumeric(10)
     $.ajax({
       url: '/generator',
       type: 'POST',
       data: {
-        user,
+        user: charUser,
         genStory: this.state.genStory,
         userStory: this.state.userStory,
       },
       success: () => {
-        
+        this.setState({
+          user: charUser,
+          justSaved: true,
+          userStory: '',
+        });
+      },
+      error: (err) => {
+        console.error(err);
       }
     });
   }
 
   render () {
+    let userId;
+    if (this.state.justSaved) {
+      userId = <span>Your recovery ID is: {this.state.user}</span>
+    }
     return (
       <div>
         <h1>You are a...</h1>
@@ -65,6 +78,7 @@ class App extends React.Component {
         <CustomStory userStory={this.state.userStory} handleChange={this.handleChange.bind(this)} />
         <button onClick={this.storyButton.bind(this)}>I Need a New Story!</button>
         <button onClick={this.saveButton.bind(this)}>Save Story</button>
+        {userId}
       </div>
     )}
 }
