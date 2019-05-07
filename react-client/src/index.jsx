@@ -1,5 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import faker from 'faker';
+import $ from 'jquery';
 import Display from './components/Display.jsx';
 import CustomStory from './components/CustomStory.jsx';
 import adjective from './possibilities/adjective.jsx';
@@ -28,21 +30,31 @@ class App extends React.Component {
   }
 
   storyButton() {
-    let story = '';
     let adj = adjective[Math.floor(Math.random() * adjective.length)];
     let back = backstory[Math.floor(Math.random() * backstory.length)];
     let role = classes[Math.floor(Math.random() * classes.length)];
     let locale = locations[Math.floor(Math.random() * locations.length)];
     let race = races[Math.floor(Math.random() * races.length)];
     
-
+    this.setState({
+      genStory: `${adj} ${race} ${role} from ${locale} who ${back}`,
+    });
   }
 
   saveButton() {
+    let user = faker.random.alphaNumeric(10)
     $.ajax({
       url: '/generator',
       type: 'POST',
-    })
+      data: {
+        user,
+        genStory: this.state.genStory,
+        userStory: this.state.userStory,
+      },
+      success: () => {
+        
+      }
+    });
   }
 
   render () {

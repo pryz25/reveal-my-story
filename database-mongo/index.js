@@ -1,7 +1,7 @@
-var mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost/test');
+const mongoose = require('mongoose');
+mongoose.connect('mongodb://localhost/characters');
 
-var db = mongoose.connection;
+let db = mongoose.connection;
 
 db.on('error', function() {
   console.log('mongoose connection error');
@@ -11,16 +11,16 @@ db.once('open', function() {
   console.log('mongoose connected successfully');
 });
 
-var characterSchema = mongoose.Schema({
-  user: Number,
+let characterSchema = mongoose.Schema({
+  user: String,
   genStory: String,
   userStory: String,
 });
 
-var Character = mongoose.model('Item', characterSchema);
+let Character = mongoose.model('Character', characterSchema);
 
-var select = function(callback) {
-  Character.find({user}, function(err, items) {
+let select = (callback) => {
+  Character.find({user}, (err, items) => {
     if(err) {
       callback(err, null);
     } else {
@@ -29,4 +29,15 @@ var select = function(callback) {
   });
 };
 
+let add = (data, callback) => {
+  Character.create({data}, (err, success) => {
+    if (err) {
+      callback(err, null);
+    } else {
+      callback(null, success);
+    }
+  });
+};
+
 module.exports.select = select;
+module.exports.add = add;
