@@ -4,6 +4,7 @@ import faker from 'faker';
 import $ from 'jquery';
 import Display from './components/Display.jsx';
 import CustomStory from './components/CustomStory.jsx';
+import Recovery from './components/Recovery.jsx';
 import adjective from './possibilities/adjective.jsx';
 import backstory from './possibilities/backstory.jsx';
 import classes from './possibilities/classes.jsx';
@@ -67,10 +68,6 @@ class App extends React.Component {
   }
 
   render () {
-    let userId;
-    if (this.state.justSaved) {
-      userId = <span>Your recovery ID is: {this.state.user}</span>
-    }
     return (
       <div>
         <h1>You are a...</h1>
@@ -78,7 +75,7 @@ class App extends React.Component {
         <CustomStory userStory={this.state.userStory} handleChange={this.handleChange.bind(this)} />
         <button onClick={this.storyButton.bind(this)}>I Need a New Story!</button>
         <button onClick={this.saveButton.bind(this)}>Save Story</button>
-        {userId}
+        <Recovery save={this.state.justSaved} userId={this.state.user} />
       </div>
     )}
 }
